@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Inventory System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-page" data-page="auth">
+    <main class="auth-shell">
+        <section class="auth-info">
+            <img src="logo.svg" alt="Inventory System logo" class="auth-logo">
+            <p class="eyebrow">Inventory Management System</p>
+            <h1>Manage your own item list after logging in.</h1>
+            <p>
+                Each user gets a separate inventory. Register once, log in, and continue updating your dashboard.
+            </p>
+
+            <div class="auth-points">
+                <div class="auth-point">
+                    <strong>Personal inventory</strong>
+                    <span>Your items stay linked to your account.</span>
+                </div>
+                <div class="auth-point">
+                    <strong>Simple dashboard</strong>
+                    <span>Track totals, low stock, and out-of-stock items.</span>
+                </div>
+                <div class="auth-point">
+                    <strong>Quick edits</strong>
+                    <span>Add items, update quantity, and remove records easily.</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="auth-card">
+            <h2>Welcome Back</h2>
+            <p class="auth-subtitle">Use the same form to log in or create an account.</p>
+
+            <form id="auth-form" class="auth-form">
+                <label class="field">
+                    <span>Username</span>
+                    <input id="auth-username" type="text" placeholder="Enter username" required>
+                </label>
+
+                <label class="field">
+                    <span>Password</span>
+                    <input id="auth-password" type="password" placeholder="Enter password" required>
+                </label>
+
+                <label class="checkbox-field">
+                    <input id="remember-me" type="checkbox">
+                    <span>Remember me on this device</span>
+                </label>
+
+                <div class="auth-actions">
+                    <button class="button primary-button" type="submit">Login</button>
+                    <button class="button secondary-button" id="register-button" type="button">Register</button>
+                </div>
+            </form>
+
+            <p class="inline-message auth-message" id="auth-message"></p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

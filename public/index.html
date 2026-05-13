@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory System Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="dashboard">
+    <aside class="side-menu" id="side-menu">
+        <div class="side-menu-header">
+            <img src="logo.svg" alt="Inventory System logo" class="menu-logo">
+            <button class="menu-close" id="menu-close" type="button" aria-label="Close menu">&times;</button>
+        </div>
+        <nav class="side-nav">
+            <a class="side-link active-link" href="/index.html">Dashboard</a>
+            <a class="side-link" href="/edit.html">Edit Inventory</a>
+            <a class="side-link" href="/about.html">About</a>
+            <a class="side-link" href="/contact.html">Contact</a>
+        </nav>
+    </aside>
+    <div class="menu-backdrop" id="menu-backdrop"></div>
+
+    <nav class="topbar">
+        <div class="topbar-left">
+            <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <img src="logo.svg" alt="Inventory System logo" class="topbar-logo">
+        </div>
+        <h1 class="topbar-title">Inventory System</h1>
+        <div class="topbar-actions">
+            <button class="button ghost-button small-button" id="theme-toggle" type="button">Dark Mode</button>
+            <span class="user-badge" id="welcome-user">Loading user...</span>
+            <button class="button ghost-button small-button" id="logout-button" type="button">Logout</button>
+        </div>
+    </nav>
+
+    <main class="page-shell">
+        <section class="hero panel hero-brand">
+            <div class="hero-copy">
+                <p class="eyebrow">Dashboard</p>
+                <h2>Track stock levels in one place.</h2>
+                <p class="hero-text">
+                    This page focuses on the live overview of your inventory: summary cards, current stock health,
+                    analytics, and a quick read-only list of items already in the system.
+                </p>
+            </div>
+            <div class="hero-mark">
+                <img src="logo.svg" alt="Inventory System logo mark" class="hero-logo">
+            </div>
+        </section>
+
+        <section class="summary-grid">
+            <article class="summary-card total-card">
+                <span class="summary-label">Total Items</span>
+                <strong class="summary-number" id="total-items">0</strong>
+                <p class="summary-text">All products currently listed.</p>
+            </article>
+            <article class="summary-card low-card">
+                <span class="summary-label">Low Stock</span>
+                <strong class="summary-number" id="low-stock">0</strong>
+                <p class="summary-text">Items with quantity below 10.</p>
+            </article>
+            <article class="summary-card out-card">
+                <span class="summary-label">Out of Stock</span>
+                <strong class="summary-number" id="out-stock">0</strong>
+                <p class="summary-text">Items that need restocking.</p>
+            </article>
+        </section>
+
+        <section class="content-grid">
+            <article class="panel chart-panel">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Chart</p>
+                        <h3>Inventory overview</h3>
+                    </div>
+                </div>
+
+                <div class="chart-box">
+                    <canvas id="inventory-chart"></canvas>
+                </div>
+            </article>
+
+            <article class="panel mission-panel mission-panel-compact">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Health Feature</p>
+                        <h3>Restock Mission</h3>
+                    </div>
+                </div>
+
+                <div class="mission-score">
+                    <strong id="health-score">0%</strong>
+                    <p id="health-message">Your inventory health score will appear here.</p>
+                </div>
+
+                <div id="restock-list" class="mission-list"></div>
+
+                <div class="mission-actions">
+                    <button class="button secondary-button" id="copy-restock-button" type="button">Copy Restock Note</button>
+                </div>
+
+                <p class="inline-message" id="restock-message"></p>
+            </article>
+        </section>
+
+        <section class="panel">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Inventory List</p>
+                    <h3>Current stock overview</h3>
+                </div>
+                <a class="button secondary-button" href="/edit.html">Open Edit Inventory</a>
+            </div>
+
+            <div class="inventory-header inventory-header-dashboard">
+                <span>Item</span>
+                <span>Category</span>
+                <span>Quantity</span>
+                <span>Status</span>
+                <span>Actions</span>
+            </div>
+
+            <div id="inventory-list" class="inventory-list"></div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

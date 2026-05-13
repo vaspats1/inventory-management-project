@@ -1,0 +1,23 @@
+node_modules/
+
+# Local runtime data
+*.log
+sessions.json
+~$*.docx
+~$*.xlsx
+~$*.pptx
+
+# Temporary extracted templates
+deliverables-template/
+deliverables-template-fresh/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+filled-deliverables/
+filled-deliverables/
+_zip_preview/
+gameinspect/
+sessions.json
+users.json
+data.json

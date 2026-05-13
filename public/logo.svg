@@ -1,0 +1,44 @@
+<svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="goldGradient" x1="54" y1="46" x2="166" y2="170" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D7B56B"/>
+      <stop offset="1" stop-color="#A07A2E"/>
+    </linearGradient>
+  </defs>
+
+  <path d="M112 22L118 34L130 40L118 46L112 58L106 46L94 40L106 34L112 22Z" fill="url(#goldGradient)"/>
+  <path d="M112 162L117 172L127 177L117 182L112 192L107 182L97 177L107 172L112 162Z" fill="url(#goldGradient)"/>
+  <circle cx="112" cy="66" r="6" fill="url(#goldGradient)"/>
+  <circle cx="112" cy="202" r="5.5" fill="#101A38"/>
+  <circle cx="28" cy="112" r="4" fill="#101A38"/>
+  <circle cx="196" cy="112" r="4" fill="#101A38"/>
+
+  <path d="M44 106C46 71 73 43 108 38" stroke="#101A38" stroke-width="5" stroke-linecap="round"/>
+  <path d="M118 38C153 43 180 71 182 106" stroke="#101A38" stroke-width="5" stroke-linecap="round"/>
+  <path d="M54 106C58 82 78 64 102 60" stroke="#101A38" stroke-width="4" stroke-linecap="round"/>
+  <path d="M122 60C146 64 166 82 170 106" stroke="#101A38" stroke-width="4" stroke-linecap="round"/>
+
+  <path d="M112 78V150C112 160 106 167 97 167C88 167 82 160 82 151V97" stroke="#101A38" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M112 78V150C112 160 118 167 127 167C136 167 142 160 142 151V97" stroke="#101A38" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="68" y="82" width="22" height="16" rx="1.5" fill="url(#goldGradient)"/>
+  <rect x="64" y="104" width="24" height="14" rx="1.5" fill="#101A38"/>
+  <rect x="90" y="104" width="16" height="14" rx="1.5" fill="#101A38"/>
+  <rect x="72" y="126" width="26" height="18" rx="1.5" fill="url(#goldGradient)"/>
+
+  <rect x="75" y="78" width="8" height="4" fill="#F8FBFF"/>
+  <rect x="72" y="100" width="7" height="4" fill="#F8FBFF"/>
+  <rect x="96" y="100" width="7" height="4" fill="#F8FBFF"/>
+  <rect x="82" y="122" width="8" height="4" fill="#F8FBFF"/>
+
+  <path d="M60 102H95" stroke="url(#goldGradient)" stroke-width="3"/>
+  <path d="M60 124H106" stroke="url(#goldGradient)" stroke-width="3"/>
+  <path d="M60 148H104" stroke="url(#goldGradient)" stroke-width="3"/>
+
+  <circle cx="138" cy="94" r="2.6" fill="url(#goldGradient)"/>
+  <circle cx="138" cy="112" r="2.6" fill="url(#goldGradient)"/>
+  <circle cx="138" cy="130" r="2.6" fill="url(#goldGradient)"/>
+  <path d="M145 94H164" stroke="url(#goldGradient)" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M145 112H164" stroke="url(#goldGradient)" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M145 130H164" stroke="url(#goldGradient)" stroke-width="2.2" stroke-linecap="round"/>
+</svg>

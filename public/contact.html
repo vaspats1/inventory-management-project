@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Inventory System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="contact">
+    <aside class="side-menu" id="side-menu">
+        <div class="side-menu-header">
+            <img src="logo.svg" alt="Inventory System logo" class="menu-logo">
+            <button class="menu-close" id="menu-close" type="button" aria-label="Close menu">&times;</button>
+        </div>
+        <nav class="side-nav">
+            <a class="side-link" href="/index.html">Dashboard</a>
+            <a class="side-link" href="/edit.html">Edit Inventory</a>
+            <a class="side-link" href="/about.html">About</a>
+            <a class="side-link active-link" href="/contact.html">Contact</a>
+        </nav>
+    </aside>
+    <div class="menu-backdrop" id="menu-backdrop"></div>
+
+    <nav class="topbar">
+        <div class="topbar-left">
+            <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <img src="logo.svg" alt="Inventory System logo" class="topbar-logo">
+        </div>
+        <h1 class="topbar-title">Inventory System</h1>
+        <div class="topbar-actions">
+            <button class="button ghost-button small-button" id="theme-toggle" type="button">Dark Mode</button>
+            <span class="user-badge" id="welcome-user">Loading user...</span>
+            <button class="button ghost-button small-button" id="logout-button" type="button">Logout</button>
+        </div>
+    </nav>
+
+    <main class="page-shell">
+        <section class="hero panel hero-brand">
+            <div class="hero-copy">
+                <p class="eyebrow">Contact</p>
+                <h2>Reach out about the project.</h2>
+                <p class="hero-text">
+                    This page keeps the contact details in one place so they are easy to find from the app menu.
+                </p>
+            </div>
+            <div class="hero-mark">
+                <img src="logo.svg" alt="Inventory System logo mark" class="hero-logo">
+            </div>
+        </section>
+
+        <section class="info-grid">
+            <article class="panel info-panel">
+                <div class="section-heading section-heading-stack">
+                    <div>
+                        <p class="eyebrow">Contact Me</p>
+                        <h3>Email contact</h3>
+                    </div>
+                </div>
+                <p>
+                    For questions, feedback, or support related to this inventory system, you can email
+                    <a class="inline-link" href="mailto:vaspats05@gmail.com">vaspats05@gmail.com</a>.
+                </p>
+                <p>
+                    This is the main contact point for project communication and general feedback.
+                </p>
+            </article>
+
+            <article class="panel info-panel">
+                <div class="section-heading section-heading-stack">
+                    <div>
+                        <p class="eyebrow">Support</p>
+                        <h3>When to use this page</h3>
+                    </div>
+                </div>
+                <p>
+                    You can use this contact page if you want to report an issue, ask about the project, or share suggestions for
+                    improving the inventory experience.
+                </p>
+                <p>
+                    Keeping the contact details on a dedicated page makes them easier to access from the navigation menu at any time.
+                </p>
+            </article>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
