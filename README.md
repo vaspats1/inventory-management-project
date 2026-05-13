@@ -50,5 +50,3 @@ http://localhost:3000/login.html
 ## Notes
 
 - This project uses JSON files instead of a database to keep the implementation simple and readable for coursework.
-- The repository includes generated assignment deliverables in `filled-deliverables/`.
-- Extracted template folders are ignored from Git so the repo stays focused on the final project files.
