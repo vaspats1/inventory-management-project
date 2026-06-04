@@ -1284,8 +1284,8 @@ class CameraController {
   }
 
   update(player, controls) {
-    const camDist = 16;
-    const camH    = 11;
+    const camDist = 10;
+    const camH    = 7;
     const yaw     = controls.cameraYaw;
 
     this._target.set(
@@ -1361,17 +1361,13 @@ class Game {
   }
 
   _setupLights() {
-    // Bright daylight ambient
-    this.scene.add(new THREE.AmbientLight(0xffffff, 2.2));
+    this.scene.add(new THREE.AmbientLight(0xffffff, 0.75));
 
-    // Sun — high and slightly angled for good shadows
-    const sun = new THREE.DirectionalLight(0xfff5e0, 2.5);
+    const sun = new THREE.DirectionalLight(0xfff5e0, 1.1);
     sun.position.set(100, 160, 60);
-    sun.castShadow = true;
     this.scene.add(sun);
 
-    // Soft fill from the opposite side (sky bounce)
-    const fill = new THREE.DirectionalLight(0xadd8f0, 0.6);
+    const fill = new THREE.DirectionalLight(0xadd8f0, 0.25);
     fill.position.set(-80, 60, -40);
     this.scene.add(fill);
   }
