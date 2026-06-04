@@ -269,6 +269,7 @@ app.delete('/items/:id', requireApiAuth, (req, res) => {
 });
 
 app.use(express.static(PUBLIC_DIR));
+app.use('/game', express.static(path.join(__dirname, 'game')));
 
 app.listen(PORT, () => {
     console.log(`Inventory Management System running on http://localhost:${PORT}`);
