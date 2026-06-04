@@ -92,14 +92,14 @@ class City {
 
   _makeGround() {
     const geo = new THREE.PlaneGeometry(680, 680);
-    const mat = new THREE.MeshLambertMaterial({ color: 0x111111 });
+    const mat = new THREE.MeshLambertMaterial({ color: 0x666666 });
     const m = new THREE.Mesh(geo, mat);
     m.rotation.x = -Math.PI / 2;
     m.receiveShadow = true;
     this.scene.add(m);
 
     // Sidewalks (slightly raised tinted slabs)
-    const swMat = new THREE.MeshLambertMaterial({ color: 0x2a2a2a });
+    const swMat = new THREE.MeshLambertMaterial({ color: 0xaaaaaa });
     for (let gx = 0; gx < GRID; gx++) {
       for (let gz = 0; gz < GRID; gz++) {
         const bx = ORIGIN + gx * CELL + STREET / 2;
@@ -114,7 +114,7 @@ class City {
   }
 
   _makeRoadLines() {
-    const mat = new THREE.MeshLambertMaterial({ color: 0x333311 });
+    const mat = new THREE.MeshLambertMaterial({ color: 0xeecc44 });
     for (let i = 0; i <= GRID; i++) {
       const coord = ORIGIN + i * CELL + CELL / 2;
       // Dashes along X axis roads
@@ -177,7 +177,7 @@ class City {
   }
 
   _addBuilding(x, z, w, h, d) {
-    const colors = [0x222222, 0x2a2a2a, 0x333333, 0x3a3530, 0x2d2d3e, 0x383028];
+    const colors = [0xe8d5a3, 0xd4956a, 0xc8b89a, 0xe2c98a, 0xcc8855, 0xddd0b0, 0xb8997a, 0xe8e0c8];
     const col = this.rng.pick(colors);
     const mat = new THREE.MeshLambertMaterial({ color: col });
     const geo = new THREE.BoxGeometry(w, h, d);
@@ -213,7 +213,7 @@ class City {
 
   _makePlaza(bx, bz, gx, gz) {
     // Concrete plaza
-    const mat  = new THREE.MeshLambertMaterial({ color: 0x555555 });
+    const mat  = new THREE.MeshLambertMaterial({ color: 0xbbbbbb });
     const geo  = new THREE.PlaneGeometry(BLOCK, BLOCK);
     const base = new THREE.Mesh(geo, mat);
     base.rotation.x = -Math.PI / 2;
@@ -238,7 +238,7 @@ class City {
   }
 
   _addFountain(cx, cz) {
-    const baseMat = new THREE.MeshLambertMaterial({ color: 0x888888 });
+    const baseMat = new THREE.MeshLambertMaterial({ color: 0xcccccc });
     // Base disk
     const bg = new THREE.CylinderGeometry(6, 6.5, 0.8, 16);
     const bm = new THREE.Mesh(bg, baseMat);
@@ -334,7 +334,7 @@ class City {
   }
 
   _addDumpster(x, z) {
-    const mat = new THREE.MeshLambertMaterial({ color: 0x1a4422 });
+    const mat = new THREE.MeshLambertMaterial({ color: 0x2d6e3e });
     const geo = new THREE.BoxGeometry(2.4, 1.4, 1.2);
     const m   = new THREE.Mesh(geo, mat);
     m.position.set(x, 0.7, z);
@@ -343,7 +343,7 @@ class City {
   }
 
   _addBarrier(x, z, rot) {
-    const mat = new THREE.MeshLambertMaterial({ color: 0x555555 });
+    const mat = new THREE.MeshLambertMaterial({ color: 0x999999 });
     const geo = new THREE.BoxGeometry(3.2, 1.0, 0.9);
     const m   = new THREE.Mesh(geo, mat);
     m.position.set(x, 0.5, z);
@@ -1323,8 +1323,8 @@ class Game {
 
     // Scene
     this.scene  = new THREE.Scene();
-    this.scene.fog = new THREE.FogExp2(0x050510, 0.012);
-    this.scene.background = new THREE.Color(0x05050f);
+    this.scene.fog = new THREE.Fog(0x87ceeb, 120, 380);
+    this.scene.background = new THREE.Color(0x87ceeb);
 
     // Camera
     this.camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 400);
@@ -1361,18 +1361,19 @@ class Game {
   }
 
   _setupLights() {
-    // Ambient night light
-    this.scene.add(new THREE.AmbientLight(0x1a1a30, 1.2));
+    // Bright daylight ambient
+    this.scene.add(new THREE.AmbientLight(0xffffff, 2.2));
 
-    // Soft directional (moon)
-    const moon = new THREE.DirectionalLight(0x3344aa, 0.5);
-    moon.position.set(50, 80, 30);
-    this.scene.add(moon);
+    // Sun — high and slightly angled for good shadows
+    const sun = new THREE.DirectionalLight(0xfff5e0, 2.5);
+    sun.position.set(100, 160, 60);
+    sun.castShadow = true;
+    this.scene.add(sun);
 
-    // A few dramatic area lights for atmosphere
-    const warmLight = new THREE.PointLight(0xff7733, 3, 60, 1.2);
-    warmLight.position.set(0, 8, 0);
-    this.scene.add(warmLight);
+    // Soft fill from the opposite side (sky bounce)
+    const fill = new THREE.DirectionalLight(0xadd8f0, 0.6);
+    fill.position.set(-80, 60, -40);
+    this.scene.add(fill);
   }
 
   startGame(teamKey) {
