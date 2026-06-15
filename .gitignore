@@ -1,5 +1,14 @@
 node_modules/
 
+# Geode iOS helper — downloaded launcher files and Python cache
+geode-ios/downloads/
+*.ipa
+*.tipa
+__pycache__/
+*.pyc
+.venv/
+venv/
+
 # Local runtime data
 *.log
 sessions.json
